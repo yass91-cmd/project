@@ -1,6 +1,8 @@
-def pgcd(a,b):
-    if b==0:
-        return a
+def fib(n):
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
     else:
-        return  a,b= b,pgcd(a%b)
-print(pgcd(48,18))
+        return  fib(n-1) + fib(n-2)
+print(fib(6))
