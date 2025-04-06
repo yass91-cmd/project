@@ -1,9 +1,16 @@
-def tri(l):
 
-    for i in range(len(l)):
-        for j in range(len(l)-i-1):
-            if l[i]>l[j+1]:
-                l[j],l[j+1]=l[j+1],l[j]
-l = [5, 2, 9, 1]
-tri(l)
-print(l)
+def search(l, x, inf, sup):
+    while inf <= sup:
+        mid = (inf + sup) // 2
+        if l[mid] == x:
+            print("It exists")
+            return
+        elif l[mid] > x:
+            sup = mid - 1
+        else:
+            inf = mid + 1
+    print("It doesn't exist")
+
+# Example usage:
+l = [1, 2, 3, 4, 5, 6, 7]
+search(l,7,0, len(l) - 1)
